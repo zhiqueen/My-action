@@ -16,17 +16,7 @@ jobs:
       env:
           DEBIAN_FRONTEND: noninteractive
       run: |
-        #sudo swapoff /mnt/swapfile
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        docker rmi `docker images -q`
-        sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf
-        sudo -E apt-get -qq autoremove --purge
-        sudo -E apt-get -qq clean
-        sudo df -h
-        curl -fsSL https://raw.githubusercontent.com/1orz/My-action/master/.bashrc >> ~/.bashrc
-        sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+        bash <(curl -fsSL https://raw.githubusercontent.com/1orz/My-action/master/lean-lede/prenv.sh)
         
     - name: Clone source and install
       run: |
@@ -107,20 +97,11 @@ jobs:
   Raspberry3:
     runs-on: ubuntu-latest
     steps:
-    - name: Initialization environment.
+    - name: Prepare environment.
       env:
           DEBIAN_FRONTEND: noninteractive
       run: |
-        docker rmi `docker images -q`
-        #sudo swapoff /mnt/swapfile
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf
-        sudo -E apt-get -qq autoremove --purge
-        sudo -E apt-get -qq clean
-        curl -fsSL https://raw.githubusercontent.com/1orz/My-action/master/.bashrc >> ~/.bashrc
-        sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+        bash <(curl -fsSL https://raw.githubusercontent.com/1orz/My-action/master/lean-lede/prenv.sh)
         
     - name: Clone source and install
       run: |
@@ -200,20 +181,11 @@ jobs:
   RaspberryPi4:
     runs-on: ubuntu-latest
     steps:
-    - name: Initialization environment.
+    - name: Prepare environment.
       env:
           DEBIAN_FRONTEND: noninteractive
       run: |
-        docker rmi `docker images -q`
-        #sudo swapoff /mnt/swapfile
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf
-        sudo -E apt-get -qq autoremove --purge
-        sudo -E apt-get -qq clean
-        curl -fsSL https://raw.githubusercontent.com/1orz/My-action/master/.bashrc >> ~/.bashrc
-        sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+        bash <(curl -fsSL https://raw.githubusercontent.com/1orz/My-action/master/lean-lede/prenv.sh)
         
     - name: Clone source and install
       run: |
