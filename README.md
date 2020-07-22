@@ -14,14 +14,16 @@
 **提示：passing绿色标志为状态正常**
 **如果为falling也并不代表所有项目全部编译失败，请到Actions查看**
 
-| 项目名称 | 运行平台 | 编译状态 | 源码地址 | 更新方式 | 更新频率 |
-| :------: | :------: | :------: | :------: | :------: | :------: |
-| Lean's lede(ssrplus/passwall) | x86/armv8(树莓派3b/3b+/4b) | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Lean-lede?label=) |[Github](https://github.com/coolsnowwolf/lede) | 自动更新 | 每4h |
-| OpenWrt-官版 | x86 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Golang-Project?label=) |[Github](https://github.com/openwrt/openwrt) | 自动更新 | 每4h |
-| Gitea① | 全平台 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Golang-Project?label=) |[Github](https://github.com/go-gitea/gitea) | 自动更新 | 每2h |
-| Gogs① | 全平台 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Golang-Project?label=) |[Github](https://github.com/gogs/gogs) | 自动更新 | 每2h |
-| Nps① | 全平台 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Golang-Project?label=) |[Github](https://github.com/ehang-io/nps) | 自动更新 | 每2h |
-| Frp① | 全平台 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Golang-Project?label=) |[Github](https://github.com/fatedier/frp) | 自动更新 | 每2h |
+| 项目名称 | 运行平台 | 编译状态 | 源码地址 |
+| :------: | :------: | :------: | :------: |
+| LEDE | x86_64 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Lean-lede?label=) |[Github](https://github.com/coolsnowwolf/lede) |
+| LEDE | 树莓派2B/3B/3B+(32bit) | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Lean-lede?label=) |[Github](https://github.com/coolsnowwolf/lede) |
+| LEDE | 树莓派2B/3B/3B+(64bit) | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Lean-lede?label=) |[Github](https://github.com/coolsnowwolf/lede) |
+| LEDE | 树莓派4B | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Lean-lede?label=) |[Github](https://github.com/coolsnowwolf/lede) |
+| Gitea① | 全平台 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Golang-Project?label=) |[Github](https://github.com/go-gitea/gitea) |
+| Gogs① | 全平台 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Golang-Project?label=) |[Github](https://github.com/gogs/gogs) |
+| Nps① | 全平台 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Golang-Project?label=) |[Github](https://github.com/ehang-io/nps) |
+| Frp① | 全平台 | ![](https://img.shields.io/github/workflow/status/1orz/My-action/Build-Golang-Project?label=) |[Github](https://github.com/fatedier/frp) |
 
 # 赞助
 
