@@ -178,4 +178,3 @@ jobs:
 #        curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Software/ALL/V2Ray" -F "file=@V2Ray.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
 #        curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Software/ALL/V2Ray" -F "file=@V2Ray.zip" ${{ secrets.CN_STATION_PROCESSOR }}
 
-
