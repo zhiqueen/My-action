@@ -238,7 +238,7 @@ jobs:
         cd lede/bin
         zip -r rpi-32bit-Package.zip . -i *.ipk
         curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi-32bit/Lean-Package" -F "file=@rpi-32bit-Package.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
-        curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi-32bit/Lean-Package" -F "file=@rpi3-Package.zip" ${{ secrets.CN_STATION_PROCESSOR }}
+        curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi-32bit/Lean-Package" -F "file=@rpi-32bit-Package.zip" ${{ secrets.CN_STATION_PROCESSOR }}
         
     - name: Setup Upload dictionary
       if: always()
