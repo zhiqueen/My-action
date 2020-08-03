@@ -339,4 +339,3 @@ jobs:
         zip -r -o -q rpi4.zip . -i *.gz
         curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi4/Lean" -F "file=@rpi4.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
         curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi4/Lean" -F "file=@rpi4.zip" ${{ secrets.CN_STATION_PROCESSOR }}
-
