@@ -14,11 +14,10 @@ git clone https://github.com/openwrt-develop/luci-theme-atmaterial
 git clone https://github.com/vernesong/OpenClash
 git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
-git clone https://github.com/pymumu/luci-app-smartdns
-#git clone https://github.com/pymumu/openwrt-smartdns
+git clone -b lede https://github.com/pymumu/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns
 git clone -b 18.06  https://github.com/jerrykuku/luci-theme-argon
-git clone https://github.com/KFERMercer/openwrt-baidupcs-web
-git clone https://github.com/KFERMercer/luci-app-baidupcs-web
+
 cd ../../
 
 # Modify default IP
