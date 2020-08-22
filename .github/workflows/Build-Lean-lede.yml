@@ -11,7 +11,7 @@ on:
       -  'lean-lede/rpi32/.config'
       -  'lean-lede/mt7621/.config'
   schedule:
-        - cron: 0 */6 * * *
+        - cron: 0 */4 * * *
 
 jobs:
   x86:
@@ -65,7 +65,7 @@ jobs:
       if: success()
       run: |
         cd lede/bin
-        zip -r x86_64-Package.zip . -i *.ipk
+        zip -r -o -q x86_64-Package.zip . -i *.ipk
         curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/x86_64/Lean-Package" -F "file=@x86_64-Package.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
         curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/x86_64/Lean-Package" -F "file=@x86_64-Package.zip" ${{ secrets.CN_STATION_PROCESSOR }}
         
@@ -87,7 +87,7 @@ jobs:
       if: success()
       run: |
         cd lede/bin/targets/*/*
-        zip -r -o x86_64.zip . -i *.gz
+        zip -r -o -q x86_64.zip . -i *.gz
         curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/x86_64/Lean" -F "file=@x86_64.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
         curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/x86_64/Lean" -F "file=@x86_64.zip" ${{ secrets.CN_STATION_PROCESSOR }}
 
@@ -143,7 +143,7 @@ jobs:
       if: success()
       run: |
         cd lede/bin
-        zip -r rpi3-Package.zip . -i *.ipk
+        zip -r -o -q rpi3-Package.zip . -i *.ipk
         curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi3/Lean-Package" -F "file=@rpi3-Package.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
         curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi3/Lean-Package" -F "file=@rpi3-Package.zip" ${{ secrets.CN_STATION_PROCESSOR }}
         
@@ -219,7 +219,7 @@ jobs:
       if: success()
       run: |
         cd lede/bin
-        zip -r rpi-32bit-Package.zip . -i *.ipk
+        zip -r -o -q rpi-32bit-Package.zip . -i *.ipk
         curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi-32bit/Lean-Package" -F "file=@rpi-32bit-Package.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
         curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi-32bit/Lean-Package" -F "file=@rpi-32bit-Package.zip" ${{ secrets.CN_STATION_PROCESSOR }}
         
@@ -288,7 +288,7 @@ jobs:
       if: success()
       run: |
         cd lede/bin
-        zip -r rpi4-Package.zip . -i *.ipk
+        zip -r -o -q rpi4-Package.zip . -i *.ipk
         curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi4/Lean-Package" -F "file=@rpi4-Package.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
         curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi4/Lean-Package" -F "file=@rpi4-Package.zip" ${{ secrets.CN_STATION_PROCESSOR }}
 
@@ -357,11 +357,10 @@ jobs:
       if: success()
       run: |
         cd lede/bin
-        zip -r mt7621-Package.zip . -i *.ipk
+        zip -r -o -q  mt7621-Package.zip . -i *.ipk
         curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/XiaoMi/XiaoMi-AC2100/Lean-Package" -F "file=@mt7621-Package.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
         curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi4/Lean-Package" -F "file=@mt7621-Package.zip" ${{ secrets.CN_STATION_PROCESSOR }}
 
-        
     - name: Setup Upload dictionary
       if: always()
       run: |
@@ -380,6 +379,6 @@ jobs:
       if: success()
       run: |
         cd lede/bin/targets/*/*
-        zip -r -o -q mt7621.zip . -i *.bin
+        zip -r -o -q mt7621.zip .
         curl -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/XiaoMi/XiaoMi-AC2100/Lean" -F "file=@mt7621.zip" ${{ secrets.MAIN_UPLOAD_PROCESSOR }}
         curl --socks5 ${{ secrets.PROXY_ADDR }} -U ${{ secrets.PROXY_USER }} -F "token=${{ secrets.UPLOAD_TOKEN }}" -F "location=Router/LEDE/RaspberryPi4/Lean" -F "file=@mt7621.zip" ${{ secrets.CN_STATION_PROCESSOR }}
