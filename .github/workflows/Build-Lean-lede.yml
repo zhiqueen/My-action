@@ -4,11 +4,11 @@ on:
     branches:
       - master
     paths:
-      - '.github/workflows/Build-Lean-lede.yml'
-      -  'lean-lede/x86_64/.config'
-      -  'lean-lede/rpi4/.config'
-      -  'lean-lede/rpi/.config'
-      -  'lean-lede/rpi32/.config'
+      #- '.github/workflows/Build-Lean-lede.yml'
+      #-  'lean-lede/x86_64/.config'
+      #-  'lean-lede/rpi4/.config'
+      #-  'lean-lede/rpi/.config'
+      #-  'lean-lede/rpi32/.config'
       -  'lean-lede/mt7621/.config'
   #schedule:
         #- cron: 0 */4 * * *
