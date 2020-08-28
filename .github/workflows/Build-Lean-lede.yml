@@ -23,7 +23,7 @@ jobs:
       env:
           DEBIAN_FRONTEND: noninteractive
       run: |
-        bash <(curl -fsSL https://raw.githubusercontent.com/1orz/My-action/master/lean-lede/prenv.sh)
+        bash <(curl -fsSL https://raw.githubusercontent.com/zhiqueen/My-action/master/lean-lede/prenv.sh)
         
     - name: Clone source and install
       run: |
@@ -35,8 +35,8 @@ jobs:
     - name: Download and Load custom configuration
       run: |
         cd lede
-        curl -fsSL https://raw.githubusercontent.com/1orz/My-action/master/lean-lede/mt7621/.config >.config
-        bash <(curl -fsSL https://raw.githubusercontent.com/1orz/My-action/master/lean-lede/diy.sh)
+        curl -fsSL https://raw.githubusercontent.com/zhiqueen/My-action/master/lean-lede/mt7621/.config >.config
+        bash <(curl -fsSL https://raw.githubusercontent.com/zhiqueen/My-action/master/lean-lede/diy.sh)
         ./scripts/feeds install -a
         make defconfig
         
